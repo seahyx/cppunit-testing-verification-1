@@ -138,3 +138,28 @@ All test cases are defined in the test fixture in `src/TestStudent.h` and `src/T
 ## Test Result
 
 ### Before Bug Fix
+
+![Console result report](img/test-before-fix.png)
+![Console coverage report](img/gcovr-before-fix.png)
+
+| Test Failure # | Bug Details                                                                                                                                                                                                      |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1              | Trying to retrieve a grade score from an invalid/unassigned course returned a value of `-1` instead of `-100`                                                                                                    |
+| 2              | Trying to retrieve a grade letter from an invalid/unassigned course returned a value of `"INV"` instead of `""`                                                                                                  |
+| 3              | Trying to retrieve a grade score from an invalid/unassigned course returned a value of `-1` insteald of `-100`                                                                                                   |
+| 4              | A course with a grade score of `90` should return a grade letter of `"A"`, but it returned `"B"` instead. Reason was the wrong equality sign used in line 24 of `src/Course.cpp`, should be `>=` instead of `>`. |
+| 5              | Trying to retrieve a grade score from a dropped course returned a value of `-1` instead of `-100`.                                                                                                               |
+| 6              | Trying to retrieve a grade letter from a course with a invalid grade score of `110` returned `"A"` instead of `"INV"`.                                                                                           |
+
+### After Bug Fix
+
+![Test and gcovr after bug fix](img/testandgcovr-after-fix.png)
+
+#### Changes
+
+1. `src/Student.cpp`
+   1. Fixed return value of grade scores for invalid/unassigned courses from `-1` to `-100`.
+   2. Fixed return value of grade letter for invalid/unassigned courses from `""` to `"INV"`.
+2. `src/Course.cpp`
+   1. Fixed comparator for the `"A"` letter grade from `>` to `>=`.
+   2. Added check for grade scores `>100` to return a grade letter for `"INV"`.
