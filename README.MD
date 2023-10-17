@@ -1,6 +1,12 @@
 # Testing Report
 
-> By Seah Ying Xiang 謝穎翔 (T12902136) <t12902136@ntu.edu.tw>
+By Seah Ying Xiang 謝穎翔 (T12902136) <t12902136@ntu.edu.tw>
+
+> National Taiwan University
+>
+> EE5191 Software Testing & Security Checking
+>
+> Project 1: White-box unit testing with CPP and coverage instrumentation
 
 ## Testing Environment
 
@@ -23,17 +29,17 @@ Ensure that all prerequisite packages have been installed.
 
 1. If the project root folder contains the `test` file or `*.gcda` or `*.gcno` files, run the following command to clean up the test files:
 
-  ```make clean```
+   ```make clean```
 
 2. To generate the test files and coverage reports, run the following command:
 
-  ```make```
+   ```make```
 
-  or
+   or
 
-  ```make test```
+   ```make test```
 
-  The test will automatically execute, followed by the coverage reports.
+   The test will automatically execute, followed by the coverage reports.
 
 ## Explanation of Software Under Testing (SUT)
 
