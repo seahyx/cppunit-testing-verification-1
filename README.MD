@@ -138,5 +138,3 @@ All test cases are defined in the test fixture in `src/TestStudent.h` and `src/T
 ## Test Result
 
 ### Before Bug Fix
-
-
